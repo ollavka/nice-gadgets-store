@@ -1,0 +1,23 @@
+@use '../../styles/utils' as *;
+
+.productList {
+  @include pageGrid;
+  row-gap: 40px;
+  grid-column: 1 / -1;
+}
+
+.productCard {
+  grid-column: span 4;
+
+  @include onTablet {
+    grid-column: span 6;
+  }
+
+  @media screen and (min-width: 767px) {
+    grid-column: span 4;
+  }
+
+  @include onDesctop {
+    grid-column: span 6;
+  }
+}

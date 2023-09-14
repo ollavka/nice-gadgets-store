@@ -1,0 +1,33 @@
+@use '../../styles/utils' as *;
+
+.container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  @include bodyText;
+  color: $primary-color;
+
+  &-prev {
+    margin-right: 8px;
+  }
+
+  &-next {
+    margin-left: 8px;
+  }
+
+  &-element {
+    border-color: $elements-color;
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,89 @@
+@use '../../styles/utils/index' as *;
+
+// .category {
+//   &:nth-child(n + 2) {
+//     margin-top: 32px;
+
+//     @include onTablet {
+//       margin-top: 0;
+//     }
+//   }
+// }
+
+.Category_Img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.link {
+  display: block;
+  position: relative;
+  padding-bottom: 100%;
+
+  @include onDesctop {
+    @include hover(scale, 1.04);
+
+    &::before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      content: 'Shop by category';
+      height: 100%;
+      width: 100%;
+
+      @include buttonText;
+      color: $white-color;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 1;
+      opacity: 0;
+      z-index: 3;
+
+      transition: opacity 0.3s ease;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primary-color;
+      opacity: 0;
+
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.5;
+      }
+
+      &::before {
+        opacity: 0.85;
+      }
+    }
+  }
+}
+
+.Category_Title {
+  @include h4-text-mobile;
+  margin-top: 24px;
+  color: $primary-color;
+
+  @include onTablet {
+    @include h4-text;
+  }
+}
+
+.Category_Amount {
+  @include bodyText;
+  color: $secondary-color;
+}

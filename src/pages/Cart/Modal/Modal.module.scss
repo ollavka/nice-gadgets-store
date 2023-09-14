@@ -1,0 +1,91 @@
+@use '../../../styles/utils/index' as *;
+
+.ModalContainer {
+  position: fixed;
+  box-sizing: border-box;
+  padding: 15px;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $secondary-color;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.ModalWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 250px;
+  background-color: $white-color;
+  border-radius: 10px;
+  box-shadow: 2px 4px 20px;
+  z-index: 4;
+
+  @include onTablet {
+    width: 450px;
+    height: 375px;
+  }
+
+  &__CloseBtn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    width: 10%;
+    height: 10%;
+    background-color: $white-color;
+    cursor: pointer;
+    z-index: 2;
+
+    img {
+      width: 75%;
+    }
+  }
+
+  &__Content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__Img {
+    margin-top: 30px;
+    text-align: center;
+
+    &__Icon {
+      width: 35%;
+      height: 35%;
+    }
+  }
+
+  &__Text {
+    @include h3-text-mobile;
+    width: 250px;
+    margin: 15px 0;
+    text-align: center;
+    color: $primary-color;
+
+    @include onTablet {
+      @include h3-text;
+    }
+
+    &__Loading {
+      padding: 8px;
+      @include bodyText;
+      color: $secondary-color;
+      clip-path: inset(0 1.75ch 0 0);
+      animation: l 1s steps(4) infinite;
+    }
+
+    @keyframes l {
+      to {
+        clip-path: inset(0 -0.05ch 0 0);
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+@use '../../styles/utils/index' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 8px;
+  background-color: var(--background-card-color);
+  border: 1px solid $elements-color;
+  transition-duration: 0.3s;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
+
+  @include onTablet {
+    width: 100%;
+  }
+
+  &__title {
+    @include bodyText;
+    margin-top: 16px;
+    min-height: 42px;
+    color: $primary-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding-bottom: 100%;
+
+    &::before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      content: 'Go to the product';
+      height: 100%;
+      width: 100%;
+      z-index: 3;
+
+      @include buttonText;
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 1;
+      opacity: 0;
+
+      transition: opacity 0.3s ease;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: -10px;
+      padding: 10px;
+      background-color: var(--card-hover);
+      opacity: 0;
+
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.5;
+      }
+
+      &::before {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @include onDesctop {
+    &:hover {
+      box-shadow: 0 0 11px rgba(33, 33, 33, 0.5);
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @include h3-text;
+
+    &__old {
+      @include smallText;
+      color: $secondary-color;
+      font-size: 22px;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: $elements-color;
+  }
+
+  &__characteristics {
+    display: flex;
+    margin-block: 8px;
+    flex-direction: column;
+    gap: 8px;
+    @include smallText;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}
+
+.buttonFavorite {
+  padding: 12px;
+}
+
+.buttonCart {
+  flex: 1 0 auto;
+  padding: 12px;
+}
+
+.characteristic {
+  display: flex;
+  justify-content: space-between;
+  @include smallText;
+}
+
+.characteristicTitle {
+  color: $secondary-color;
+}
+
+.characteristicValue {
+  color: $primary-color;
+}

@@ -1,0 +1,94 @@
+@mixin hoverUnderline($property, $fromValue, $toValue, $color) {
+  & {
+    position: relative;
+    width: fit-content;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 3px;
+      width: 100%;
+      background-color: $color;
+      left: 0;
+      bottom: 0;
+      transform-origin: center;
+      transition: $property 0.3s ease;
+      #{$property}: $fromValue;
+    }
+
+    &:hover::after,
+    &.active::after {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin onTablet {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesctop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 4;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    --columns: 12;
+  }
+
+  @include onDesctop {
+    --columns: 24;
+  }
+}
+
+@mixin hover(
+  $property,
+  $toValue,
+  $nestedElem: false,
+  $duration: 0.3s,
+  $time-func: ease
+) {
+  transition: $property $duration $time-func;
+
+  @if $nestedElem {
+    &__#{$nestedElem} {
+      transition: $property $duration $time-func;
+    }
+
+    &:hover > &__#{$nestedElem} {
+      #{$property}: $toValue;
+    }
+  } @else {
+    &:hover,
+    &.active {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin centering-xy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin centering-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centering-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

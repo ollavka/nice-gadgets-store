@@ -1,0 +1,127 @@
+@use '../../styles/utils' as *;
+
+.container {
+  max-width: 176px;
+  position: relative;
+
+  &.active {
+    .trigger {
+      border-color: var(button-selected-backg);
+    }
+
+    .icon {
+      &--up {
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+
+      &--down {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+
+    .list {
+      transform: translateY(0%);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &.disabled {
+    .trigger {
+      border-color: $elements-color;
+      color: $elements-color;
+      pointer-events: none;
+    }
+
+    .label {
+      color: $elements-color;
+    }
+  }
+}
+
+.label {
+  display: block;
+  @include smallText;
+  color: $secondary-color;
+  margin-bottom: 4px;
+}
+
+.trigger {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--dropdown);
+
+  @include buttonText;
+  color: $primary-color;
+
+  cursor: pointer;
+  background-color: var(--button-selected-backg);
+
+  @include hover(border-color, $secondary-color);
+}
+
+.text {
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  @include centering-y;
+
+  &--up {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+}
+
+.list {
+  position: absolute;
+  width: 100%;
+  margin-top: 4px;
+  border: 1px solid $elements-color;
+  background-color: $white-color;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.05);
+  padding: 8px 0;
+  z-index: 10;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+
+  transform: translateY(-10%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.listItem {
+  @include bodyText;
+  color: $secondary-color;
+  background-color: $white-color;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+    background-color: var(--hover-bg-color);
+  }
+}
+
+.listLink {
+  padding: 6px 0 6px 12px;
+  display: block;
+  height: 100%;
+  color: inherit;
+}

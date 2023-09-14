@@ -1,0 +1,124 @@
+@use '../../styles/utils/index' as *;
+
+.footer {
+  box-sizing: border-box;
+  border-top: 1px solid $elements-color;
+  transition-duration: 0.3s;
+
+  @include uppercaseText;
+
+  &__logo {
+    width: 100%;
+
+    @include onTablet() {
+      width: 80px;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+
+    @include onTablet() {
+      width: 80px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include onTablet() {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+
+      @include onDesctop {
+        gap: 60px;
+      }
+    }
+
+    &__item {
+      list-style-type: none;
+
+      @include onTablet() {
+        &:not(:first-child) {
+          margin: 0;
+          margin-left: 16px;
+        }
+      }
+    }
+
+    &__link {
+      display: block;
+      align-items: center;
+      text-decoration: none;
+      color: $secondary-color;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $secondary-color;
+    background-color: $white-color;
+    text-transform: none;
+    gap: 16px;
+    cursor: pointer;
+
+    @include smallText;
+
+    &__text {
+      transition: all 0.3s ease;
+    }
+
+    &__arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      background-color: $white-color;
+      border: 1px solid $icons-color;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: transparent !important;
+      }
+
+      &__up {
+        padding-inline: 8px;
+      }
+    }
+  }
+}
+
+.footer__button:hover .footer__button__text {
+  color: $primary-color;
+}
+
+.footer__button:hover .footer__button__arrow {
+  border-color: $primary-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding-block: 32px;
+
+  @include onTablet() {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

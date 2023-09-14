@@ -1,0 +1,83 @@
+@use '../../styles/utils/' as *;
+
+.productsContainer {
+  @include pageGrid;
+}
+
+.listContainer {
+  margin-bottom: 40px;
+}
+
+.title {
+  grid-column: 1 / -1;
+  color: $primary-color;
+  @include h2-text;
+
+  @include onTablet {
+    @include h1-text;
+  }
+}
+
+.breadcrumbs {
+  grid-column: 1 / -1;
+}
+
+.loader {
+  @include centering-xy;
+}
+
+.dropdowns {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 40px;
+  margin-bottom: 24px;
+  gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(7, 1fr);
+    grid-column: span 7;
+  }
+}
+
+.dropdown {
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: span 3;
+
+    &-wide {
+      grid-column: span 4;
+    }
+  }
+}
+
+.text {
+  @include bodyText;
+  color: $secondary-color;
+  grid-column: 1 / -1;
+}
+
+.pagination {
+  grid-column: 1 / -1;
+  margin-bottom: 80px;
+}
+
+.NoResults {
+  margin-block: 30px;
+  grid-column: 1 / -1;
+
+  @include onDesctop {
+    margin-top: 120px;
+  }
+}
+
+.NoResultsText {
+  text-align: center;
+
+  @include h2-text-mobile;
+
+  @include onTablet {
+    @include h2-text;
+  }
+}

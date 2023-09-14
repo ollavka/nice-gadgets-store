@@ -1,0 +1,60 @@
+@use '../../styles/utils' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  width: 100%;
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @include h2-text;
+
+    &__old {
+      font-family: 'Mont Regular';
+      font-size: 22px;
+      color: $secondary-color;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__characteristics {
+    display: flex;
+    margin-top: 32px;
+    flex-direction: column;
+    gap: 8px;
+    @include smallText;
+  }
+
+  &__buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}
+
+.buttonFavorite {
+  padding: 12px;
+}
+
+.buttonCart {
+  flex: 1 0 auto;
+  padding: 12px;
+}
+
+.characteristic {
+  display: flex;
+  justify-content: space-between;
+  @include smallText;
+}
+
+.characteristicTitle {
+  color: $secondary-color;
+}
+
+.characteristicValue {
+  color: $primary-color;
+}

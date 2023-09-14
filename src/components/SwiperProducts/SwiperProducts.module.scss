@@ -1,0 +1,45 @@
+@use '../../styles/utils/index' as *;
+
+.swiperContainer {
+  padding: 0 10px 30px;
+  margin: 0 -10px -30px;
+  overflow: hidden;
+}
+
+.swiperContent {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 30px 30px;
+  margin: 0 -30px -30px;
+}
+
+.swiperHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  &__title {
+    color: $primary-color;
+    width: 136px;
+
+    @include h2-text-mobile;
+
+    @include onTablet() {
+      width: 100%;
+
+      @include h2-text;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.swiperButton {
+  width: 32px;
+  height: 32px;
+}

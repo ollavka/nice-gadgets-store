@@ -1,0 +1,74 @@
+@use 'variables' as vars;
+
+html {
+  font-family: 'Mont Regular', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: vars.$primary-color;
+  background-color: vars.$white-color;
+}
+
+body,
+article,
+section,
+div,
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a,
+a:focus,
+a:active,
+a:visited,
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px input-bacground-color inset !important;
+}
+
+img {
+  vertical-align: top;
+}
+
+iframe {
+  display: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}

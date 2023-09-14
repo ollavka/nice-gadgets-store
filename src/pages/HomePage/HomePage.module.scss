@@ -1,0 +1,30 @@
+@use '../../styles/utils' as *;
+
+.HomePage {
+  &__title {
+    grid-column: 1 /-1;
+    margin-top: 24px;
+    color: $primary-color;
+    @include h2-text;
+
+    @include onTablet {
+      @include h1-text;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+
+    @include onDesctop {
+      @include h1-text;
+      margin-top: 56px;
+      margin-bottom: 56px;
+    }
+  }
+}
+
+.loader {
+  @include centering-xy;
+}
+
+.swiperContainer {
+  margin: 80px 0;
+}

@@ -1,0 +1,24 @@
+@use '../../styles/utils/index' as *;
+
+.container {
+  grid-column: 1 /-1;
+}
+
+.title {
+  @include h2-text-mobile;
+  margin-bottom: 24px;
+  color: $primary-color;
+
+  @include onTablet {
+    @include h2-text;
+  }
+}
+
+.categories {
+  display: grid;
+
+  @include onTablet {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}

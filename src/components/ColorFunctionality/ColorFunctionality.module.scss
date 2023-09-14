@@ -1,0 +1,45 @@
+@import '../../styles/utils/index';
+
+.color {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $elements-color;
+  box-sizing: border-box;
+  color: $secondary-color;
+
+  @include smallText;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 18px 0 37px 0;
+    gap: 40px;
+
+    &__item {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(0%, -30%);
+      width: 32px;
+      height: 32px;
+      background-color: $white-color;
+      border: 1px solid $elements-color;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+  }
+
+  &__inner {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+  }
+}
+
+.is__active {
+  border: 1px solid $primary-color;
+}

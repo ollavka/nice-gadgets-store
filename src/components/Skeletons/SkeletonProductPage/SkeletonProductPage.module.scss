@@ -1,0 +1,148 @@
+@use '../../../styles/utils/index' as *;
+
+.Skeleton {
+  &__Title {
+    display: grid;
+    margin-top: 15px;
+    padding-bottom: 17px;
+
+    @include onTablet {
+      grid-template-columns: 50%;
+    }
+
+    @include onDesctop {
+      grid-template-columns: 30%;
+    }
+  }
+
+  &__Item {
+    display: grid;
+    margin-top: 17px;
+
+    @include onTablet {
+      grid-template-columns: 54% 46%;
+    }
+
+    @include onDesctop {
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  &__ItemDetails {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 60%;
+    }
+  }
+
+  &__ImagesContainer {
+    display: grid;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 17px;
+
+    @include onTablet {
+      grid-template-columns: 22% 78%;
+      justify-content: start;
+      margin-bottom: 0;
+
+      .Skeleton__Image {
+        order: 2;
+      }
+
+      .Skeleton__Images {
+        order: 1;
+      }
+    }
+  }
+
+  &__Image {
+    display: grid;
+  }
+
+  &__Images {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+
+    @include onTablet {
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(3, 23%);
+      justify-content: start;
+    }
+  }
+
+  &__Colors {
+    display: grid;
+
+    @include onDesctop {
+      & span {
+        height: 0;
+      }
+    }
+
+    &__circles {
+      display: grid;
+      margin-bottom: 20px;
+      grid-template-columns: repeat(4, 13%);
+
+      @include onTablet {
+        grid-template-columns: repeat(4, 22%);
+      }
+
+      @include onDesctop {
+        grid-template-columns: repeat(4, 13%);
+      }
+    }
+
+    &__circle {
+      border-radius: 50%;
+    }
+  }
+
+  &__Capacity {
+    display: grid;
+    margin-top: 17px;
+
+    @include onDesctop {
+      & span {
+        height: 0;
+      }
+    }
+
+    &__rectangles {
+      margin-top: 5px;
+      display: grid;
+      grid-template-columns: repeat(3, 20%);
+
+      @include onTablet {
+        grid-template-columns: repeat(3, 33%);
+      }
+
+      @include onDesctop {
+        grid-template-columns: repeat(3, 20%);
+      }
+    }
+  }
+
+  &__Price {
+    display: grid;
+    margin-left: 0;
+    margin-top: 17px;
+    margin-bottom: 10px;
+
+    @include onDesctop {
+      & span {
+        height: 0;
+      }
+    }
+  }
+
+  &__Info {
+    @include onDesctop {
+      & span {
+        height: 0;
+      }
+    }
+  }
+}

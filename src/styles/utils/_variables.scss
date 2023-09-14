@@ -1,0 +1,57 @@
+:root[data-theme='light'] {
+  --primary-color: #313237;
+  --background-card-color: #fff;
+  --main-background-color: #fff;
+  --text-color: #89939a;
+  --white-color: #fff;
+  --elements-color: #e2e6e9;
+  --icons-color: #b4bdc3;
+  --card-bord-color: #e2e6e9;
+  --secondary-color: #89939a;
+  --shadow: 0 0 11px rgba(33, 33, 33, 0.5);
+  --button-color: #313237;
+  --button-selected-text: #27ae60;
+  --button-selected-backg: #fff;
+  --icon-bckg: transparent;
+  --icon-bckg-disable: #e2e6e9;
+  --icon-hover: var(--primary-color);
+  --icon-hover-bckg: transparent;
+  --dropdown: #b4bdc3;
+  --hover-bg-color: #fafbfc;
+  --card-hover: var(--primary-color);
+}
+
+:root[data-theme='dark'] {
+  --primary-color: #f1f2f9;
+  --background-card-color: #161827;
+  --main-background-color: #0f1121;
+  --text-color: #75767f;
+  --white-color: #0f1121;
+  --elements-color: #3b3e4a;
+  --icons-color: transparent;
+  --card-bord-color: #161827;
+  --secondary-color: #e2e6e9;
+  --shadow: 1px 1px 11px rgba(94, 78, 195, 0.5);
+  --button-color: #905bff;
+  --button-selected-text: #f1f2f9;
+  --button-selected-backg: #323542;
+  --icon-bckg: #323542;
+  --icon-bckg-disable: #323542;
+  --icon-hover: transparent;
+  --icon-hover-bckg: #4a4d58;
+  --dropdown: #323542;
+  --hover-bg-color: #323542;
+  --card-hover: #161827;
+}
+
+$primary-color: var(--primary-color);
+$secondary-color: #89939a;
+$icons-color: var(--icons-color);
+$elements-color: var(--elements-color);
+$hover-bg-color: #fafbfc;
+$white-color: var(--white-color);
+$color-green: #27ae60;
+$color-red: #eb5757;
+$card-bord-color: var(--card-bord-color);
+$shadow: var(--shadow);
+$button-selected-text: var(--button-selected-text);

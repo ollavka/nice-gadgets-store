@@ -1,0 +1,122 @@
+@use '../../styles/utils' as *;
+
+.header {
+  position: relative;
+  box-shadow: 0 1px 0 0 $elements-color;
+  z-index: 3;
+  transition-duration: 0.3s;
+
+  &__container {
+    display: flex;
+    padding-left: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @include onTablet {
+      gap: 64px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+
+    @media screen and (min-width: 1087px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    padding: 20px 0;
+    padding-left: 1%;
+  }
+}
+
+.navigation {
+  display: none;
+
+  @media screen and (min-width: 1087px) {
+    display: block;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    gap: 64px;
+  }
+
+  &__link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+
+    @include uppercaseText;
+    @include hover(color, $primary-color);
+
+    @include hoverUnderline(scale, 0, 1, $primary-color);
+  }
+}
+
+.actions {
+  display: flex;
+
+  &Link {
+    position: relative;
+
+    max-width: 65px;
+    width: 16px;
+    height: 16px;
+    padding: 24px;
+    border: 1px solid transparent;
+    border-left-color: $elements-color;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent !important;
+      border-color: $primary-color !important;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 3px;
+      width: 100%;
+      background-color: $primary-color;
+      left: 0;
+      bottom: 0;
+      transform-origin: center;
+      transition: scale 0.3s ease;
+      scale: 0;
+    }
+
+    &.active::after {
+      scale: 1;
+    }
+  }
+
+  &LinkTheme,
+  &LinkFav,
+  &LinkCart {
+    display: none !important;
+
+    @media screen and (min-width: 1087px) {
+      display: flex !important;
+    }
+  }
+
+  &LinkCart {
+    border-right-color: $elements-color;
+  }
+}
+
+.burger {
+  @media screen and (min-width: 1087px) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,209 @@
+@use '../../styles/utils/' as *;
+
+.GridContainer {
+  @include pageGrid;
+
+  @include onTablet {
+    margin-top: 64px;
+  }
+
+  @include onDesctop {
+    margin-top: 80px;
+  }
+
+  &__title {
+    padding-bottom: 16px;
+    border-bottom: 1.4px solid $elements-color;
+    margin-bottom: 25px !important;
+  }
+}
+
+.skeletonList {
+  margin-top: 80px;
+}
+
+.breadcrumbs {
+  grid-column: 1 / -1;
+}
+
+.error {
+  @include h2-text-mobile;
+  color: $primary-color;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include onTablet {
+    @include h2-text;
+  }
+}
+
+.button {
+  @include smallText;
+  line-height: normal;
+  background-color: $white-color;
+  color: $secondary-color;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.PhonesDetails {
+  &__title {
+    padding-top: 16px;
+    @include h2-text-mobile;
+    grid-column: 1 / -1;
+    color: $primary-color;
+    font-weight: 800;
+    line-height: 140%;
+  }
+}
+
+.detailsCard {
+  @include pageGrid;
+  margin-top: 40px;
+}
+
+.photo {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 16px;
+
+  &__current {
+    position: relative;
+    width: 100%;
+
+    padding-top: 70%;
+    height: auto;
+    flex: 1;
+
+    @include onTablet {
+      padding-top: 75%;
+    }
+
+    @media screen and (min-width: 860px) {
+      padding-top: 70%;
+    }
+  }
+
+  @include onTablet {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    grid-column: span 7;
+  }
+
+  @include onDesctop {
+    grid-column: span 12;
+  }
+}
+
+.thumbsImages {
+  @include onTablet {
+    grid-column: span 1;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.functional {
+  margin-top: 40px;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    margin-top: 0;
+    grid-column: 8 / -1;
+  }
+
+  @include onDesctop {
+    grid-column: 14 / span 7;
+  }
+}
+
+.About {
+  margin-top: 56px;
+  color: $primary-color;
+  grid-column: span 4;
+
+  @include onTablet {
+    grid-column: 1 / -1;
+    margin-top: 64px;
+  }
+
+  @include onDesctop {
+    grid-column: span 12;
+  }
+
+  &__title {
+    @include h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__info {
+    @include h4-text-mobile;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    color: $secondary-color;
+    @include bodyText;
+    margin-bottom: 32px;
+  }
+}
+
+.TechInfo {
+  margin-top: 56px;
+  grid-column: span 4;
+
+  @include onTablet {
+    grid-column: 1 / -1;
+    margin-top: 64px;
+  }
+
+  @include onDesctop {
+    grid-column: 14 / -1;
+  }
+
+  &__title {
+    @include h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__characteristic {
+    @include bodyText;
+    color: $secondary-color;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__value {
+    color: $primary-color;
+  }
+}
+
+.swiperContainer {
+  margin: 80px 0;
+}

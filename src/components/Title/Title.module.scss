@@ -1,0 +1,10 @@
+@use '../../styles/utils' as *;
+
+.content {
+  @include h1-text-mobile;
+  color: $primary-color;
+
+  @include onTablet {
+    @include h1-text;
+  }
+}

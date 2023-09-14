@@ -1,0 +1,57 @@
+@use '../../styles/utils/index' as *;
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.content {
+  flex-grow: 1;
+  margin-bottom: -38px;
+  padding-bottom: 38px;
+}
+
+.slide__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.slide {
+  position: relative;
+  padding-top: 100%;
+  height: auto;
+
+  @include onTablet {
+    padding-top: 38%;
+  }
+}
+
+.carousel__btn {
+  display: none;
+  padding-inline: 8px;
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-block: 10px;
+  width: 100%;
+
+  --swiper-pagination-color: #313237;
+  --swiper-pagination-bullet-inactive-color: #e2e6e9;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-width: 14px;
+  --swiper-pagination-bullet-height: 4px;
+  --swiper-pagination-bullet-horizontal-gap: 14px;
+  --swiper-pagination-bullet-border-radius: 0;
+}

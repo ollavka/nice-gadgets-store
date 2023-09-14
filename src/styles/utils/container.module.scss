@@ -1,0 +1,12 @@
+@use './mixins' as m;
+
+.limit {
+  box-sizing: content-box;
+  max-width: 1136px;
+  margin: 0 auto;
+  padding-inline: 16px;
+
+  @include m.onTablet {
+    padding-inline: 24px;
+  }
+}

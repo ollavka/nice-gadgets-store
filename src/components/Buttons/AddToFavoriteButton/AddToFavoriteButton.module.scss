@@ -1,0 +1,21 @@
+@use '../../../styles/utils/index' as *;
+
+.AddToFavBtnIcon {
+  width: 16px;
+  height: 16px;
+  background: url(../../../assets/icons/like-button.svg) center / contain
+    no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+.AddToFavBtnIconDark {
+  width: 16px;
+  height: 16px;
+  background: url(../../../assets/icons-dark/like-button.svg) center / contain
+    no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+.selected {
+  background-image: url(../../../assets/icons/like-button-filled.svg);
+}

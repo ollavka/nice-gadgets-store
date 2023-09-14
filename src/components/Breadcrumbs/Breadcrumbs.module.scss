@@ -1,0 +1,40 @@
+@use '../../styles/utils/index' as *;
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $secondary-color;
+  margin: 25px 0 24px;
+  gap: 8px;
+
+  @include onTablet {
+    margin: 25px 0 40px;
+  }
+
+  @include smallText;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    &__home {
+      background: url('../../assets/icons/home.svg');
+
+      &__dark {
+        background: url('../../assets/icons-dark/Home.svg');
+      }
+    }
+
+    &__arrow {
+      background: url('../../assets/icons/gray-arrows/arrow-right.svg');
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $secondary-color;
+
+    @include hover(color, var(--button-color));
+  }
+}

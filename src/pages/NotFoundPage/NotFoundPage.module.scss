@@ -1,0 +1,55 @@
+@use '../../styles/utils/index' as *;
+
+.Container {
+  width: 100%;
+  padding: 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: $white-color;
+
+  &__Text {
+    @include h2-text-mobile;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: $secondary-color;
+
+    @include onTablet {
+      @include h2-text;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__Button {
+    width: 300px;
+    height: 75px;
+    align-self: center;
+
+    background-color: $primary-color;
+    text-decoration: none;
+    text-align: center;
+    line-height: 75px;
+
+    a {
+      @include buttonText;
+      width: 100%;
+      display: block;
+      color: $white-color;
+      line-height: 75px;
+    }
+  }
+
+  img {
+    min-height: 25vh;
+    max-height: 45vh;
+
+    @include onTablet {
+      max-height: 45vh;
+    }
+
+    @include onDesctop {
+      max-height: 45vh;
+    }
+  }
+}

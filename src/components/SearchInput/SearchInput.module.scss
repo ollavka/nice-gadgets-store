@@ -1,0 +1,86 @@
+@use '../../styles/utils' as *;
+
+.isOpened {
+  width: 150px !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+
+  @include onTablet {
+    width: 200px !important;
+  }
+}
+
+.search {
+  display: flex;
+  position: relative;
+  padding-left: 10px;
+
+  &__wrapper {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    padding-left: 5px;
+    display: flex;
+    border-left: 1px solid $icons-color;
+    transition:
+      width 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  &__input {
+    padding-left: 10px;
+    height: 100%;
+    align-items: center;
+    color: $primary-color;
+    background-color: transparent;
+
+    &::placeholder {
+      @include h2-text-mobile;
+      color: var(--secondary-color);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+    }
+  }
+}
+
+.trigger {
+  max-width: 65px;
+}
+
+.dropdown {
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 10;
+    z-index: 10;
+    background-color: var(--main-background-color);
+    border: 1px solid $secondary-color;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 216px;
+
+    @include onTablet {
+      width: 266px;
+    }
+  }
+  &__content {
+    overflow-y: auto;
+
+    z-index: 15;
+    min-height: 20px;
+    max-height: 300px;
+  }
+  &__item {
+    padding: 10px 5px;
+  }
+  &__link {
+    color: $primary-color;
+
+    @include hover(color, $secondary-color);
+  }
+  &__error {
+    padding: 10px 5px;
+    color: $primary-color;
+  }
+}

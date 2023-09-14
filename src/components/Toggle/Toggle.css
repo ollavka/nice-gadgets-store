@@ -1,0 +1,36 @@
+.theme {
+  --bg-color: #f1f2f9;
+  --main-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+}
+
+.input {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+}
+
+.icon.icon-moon {
+  fill: var(--bg-color);
+  display: none;
+}
+
+.icon.icon-sun {
+  stroke: var(--main-color);
+}
+
+.input:checked ~ .icon.icon-sun {
+  display: none;
+}
+
+.input:checked ~ .icon.icon-moon {
+  display: block;
+}

@@ -1,0 +1,6 @@
+@use '../utils/' as *;
+
+.container {
+  @include h4-text-mobile;
+  color: $primary-color;
+}

@@ -1,0 +1,13 @@
+.Skeleton {
+  &Carousel {
+    display: grid;
+    grid-template-columns: 5% 85% 5%;
+    justify-content: space-between;
+  }
+
+  &Slider {
+    display: grid;
+    grid-template-columns: repeat(9, 2%);
+    justify-content: center;
+  }
+}

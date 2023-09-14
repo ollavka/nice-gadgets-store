@@ -1,0 +1,54 @@
+@use '../../styles/utils/index' as *;
+
+.select {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    @media screen and (min-width: 800px) {
+      gap: 12px;
+
+      .select__item {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    @include onDesctop {
+      gap: 17px;
+
+      .select__item {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 51px;
+    height: 49px;
+    border: 1px solid $elements-color;
+    background-color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @include hover(border-color, $primary-color);
+
+    &__img {
+      position: absolute;
+      height: 40px;
+    }
+  }
+}
+
+.is__active {
+  border-color: $primary-color;
+}
