@@ -114,5 +114,5 @@ If you accidentally get lost in the shopping process and end up in an unexplored
 ## 🏃 How to get started
 
 If you have reached this point, then you have familiarized yourself with all the features of our site, so you can start shopping now)<br />
-To do this, just follow this link: [Nice Gadgets Store]().<br />
+To do this, just follow this link: [Nice Gadgets Store](https://ollavka.github.io/nice-gadgets-store).<br />
 This project is designed to provide a convenient and satisfying gadget shopping experience. Enjoy shopping at Nice Gadgets Store! 👍
